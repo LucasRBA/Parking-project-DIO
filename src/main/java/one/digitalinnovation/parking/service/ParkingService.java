@@ -30,6 +30,28 @@ public class ParkingService {
         return UUID.randomUUID().toString().replace("-", "");
     }
 
+    public String createParkingSpot(int lenLetters, int lenNumbers) {
+        String Letter_Part = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String Number_Part = "0123456789";
+
+        StringBuilder s1 = new StringBuilder(lenLetters);
+        StringBuilder s2 = new StringBuilder(lenNumbers);
+        for (int i=0; i<lenLetters; i++) {
+            int ch = (int)(Letter_Part.length()*Math.random());
+            s1.append(Letter_Part.charAt(ch));
+        }
+
+        for (int i=0; i<lenNumbers; i++){
+            int no = (int)(Number_Part.length()*Math.random());
+            s2.append(Number_Part.charAt(no));
+        }
+        String parkingSpot = (s1 + "-" + s2).toString();
+        System.out.println(parkingSpot);
+
+        return parkingSpot;
+    }
+    
+
     @Transactional(readOnly = true)
     public Parking findById(String id) {
         return parkingRepository.findById(id).orElseThrow(() ->
@@ -42,7 +64,8 @@ public class ParkingService {
         parkingCreate.setId(uuid);
         parkingCreate.setEntryDate(LocalDateTime.now());
         parkingRepository.save(parkingCreate);
-        parkingCreate.setParkingSpot(parkingCreate.getParkingSpot());
+        String parkingSpot = createParkingSpot(2,3);
+        parkingCreate.setParkingSpot(parkingSpot);
 
         return parkingCreate;
     }
