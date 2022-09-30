@@ -70,7 +70,7 @@ public class ParkingService {
         Parking parking = findById(id);
         parking.setExitDate(LocalDateTime.now());
         parking.setBill(ParkingCheckOut.getBill(parking));
-        parking.getParkingSpot();
+        parking.setParkingSpot(parking.getParkingSpot());
         parkingRepository.save(parking);
         return parking;
     }
