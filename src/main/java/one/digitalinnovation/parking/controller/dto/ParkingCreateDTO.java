@@ -62,7 +62,7 @@ public class ParkingCreateDTO {
         return parkingSpot;
     }
 
-    public String getParkingSpot() {
+    public String setParkingSpot() {
         createParkingSpot(2, 3);
         return parkingSpot;
     }
