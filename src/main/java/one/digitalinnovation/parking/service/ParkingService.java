@@ -50,7 +50,7 @@ public class ParkingService {
 
         return parkingSpot;
     }
-    
+
 
     @Transactional(readOnly = true)
     public Parking findById(String id) {
@@ -83,7 +83,7 @@ public class ParkingService {
         parking.setState(parkingCreate.getState());
         parking.setModel(parkingCreate.getModel());
         parking.setLicense(parkingCreate.getLicense());
-        parking.setParkingSpot(parkingCreate.getParkingSpot());
+        parking.setParkingSpot(createParkingSpot(2,3));
         parkingRepository.save(parking);
         return parking;
     }
@@ -93,7 +93,7 @@ public class ParkingService {
         Parking parking = findById(id);
         parking.setExitDate(LocalDateTime.now());
         parking.setBill(ParkingCheckOut.getBill(parking));
-        parking.setParkingSpot(parking.getParkingSpot());
+        parking.getParkingSpot();
         parkingRepository.save(parking);
         return parking;
     }
