@@ -20,7 +20,7 @@ public class Parking {
 
     private  String parkingSpot;
 
-    public Parking(String id, String license, String state, String model, String color) {
+    public Parking(String id, String license, String state, String model, String color, String parkingSpot) {
         this.id = id;
         this.license = license;
         this.state = state;

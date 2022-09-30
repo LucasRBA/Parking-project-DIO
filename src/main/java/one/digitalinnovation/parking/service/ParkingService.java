@@ -42,6 +42,8 @@ public class ParkingService {
         parkingCreate.setId(uuid);
         parkingCreate.setEntryDate(LocalDateTime.now());
         parkingRepository.save(parkingCreate);
+        parkingCreate.setParkingSpot(parkingCreate.getParkingSpot());
+
         return parkingCreate;
     }
 
@@ -58,6 +60,7 @@ public class ParkingService {
         parking.setState(parkingCreate.getState());
         parking.setModel(parkingCreate.getModel());
         parking.setLicense(parkingCreate.getLicense());
+        parking.setParkingSpot(parkingCreate.getParkingSpot());
         parkingRepository.save(parking);
         return parking;
     }
@@ -67,6 +70,7 @@ public class ParkingService {
         Parking parking = findById(id);
         parking.setExitDate(LocalDateTime.now());
         parking.setBill(ParkingCheckOut.getBill(parking));
+        parking.getParkingSpot();
         parkingRepository.save(parking);
         return parking;
     }
