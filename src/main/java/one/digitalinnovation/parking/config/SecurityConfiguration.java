@@ -18,15 +18,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     //Configurar o login do usuario
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("user")
-                .password(passwordEncoder().encode("Dio@123456"))
+                .withUser("Kira")
+                .password(passwordEncoder().encode("SouLindaPai@3"))
                 .roles("USER")
                 .and()
                 .passwordEncoder(passwordEncoder());
     }
 
     @Override
-    //Configura a autorização
+    //Authorization Configs
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests()
                 .antMatchers("/swagger-ui.html").permitAll()
