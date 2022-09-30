@@ -19,6 +19,8 @@ public class ParkingDTO {
     private LocalDateTime exitDate;
     private Double bill;
 
+    private String parkingSpot;
+
     public String getId() {
         return id;
     }
@@ -81,5 +83,13 @@ public class ParkingDTO {
 
     public void setBill(Double bill) {
         this.bill = bill;
+    }
+
+    public String getParkingSpot() {
+        return parkingSpot;
+    }
+
+    public void setParkingSpot(String parkingSpot) {
+        this.parkingSpot = parkingSpot;
     }
 }

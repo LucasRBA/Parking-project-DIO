@@ -18,12 +18,15 @@ public class Parking {
     private LocalDateTime exitDate;
     private Double bill;
 
+    private  String parkingSpot;
+
     public Parking(String id, String license, String state, String model, String color) {
         this.id = id;
         this.license = license;
         this.state = state;
         this.model = model;
         this.color = color;
+        this.parkingSpot = parkingSpot;
     }
 
     public Parking() {
@@ -91,5 +94,13 @@ public class Parking {
 
     public void setBill(Double bill) {
         this.bill = bill;
+    }
+
+    public String getParkingSpot() {
+        return parkingSpot;
+    }
+
+    public void setParkingSpot(String parkingSpot) {
+        this.parkingSpot = parkingSpot;
     }
 }
