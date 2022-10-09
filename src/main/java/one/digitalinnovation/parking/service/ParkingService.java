@@ -67,11 +67,11 @@ public class ParkingService {
         String uuid = getUUID();
         parkingCreate.setId(uuid);
         parkingCreate.setEntryDate(LocalDateTime.now());
-        parkingRepository.save(parkingCreate);
         String parkingSpot = createParkingSpot(2,2);
-        String licensePlate = generateLicensePlate(3,4);
         parkingCreate.setParkingSpot(parkingSpot);
+        String licensePlate = generateLicensePlate(3,4);
         parkingCreate.setLicensePlate(licensePlate);
+        parkingRepository.save(parkingCreate);
 
         return parkingCreate;
     }
@@ -100,8 +100,8 @@ public class ParkingService {
         Parking parking = findById(id);
         parking.setExitDate(LocalDateTime.now());
         parking.setBill(ParkingCheckOut.getBill(parking));
-        parking.getParkingSpot();
-        parking.getLicensePlate();
+        parking.getParkingSpot(); //
+        parking.getLicensePlate(); //
         parkingRepository.save(parking);
         return parking;
     }
