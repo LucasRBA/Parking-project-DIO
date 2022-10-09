@@ -36,7 +36,7 @@ class ParkingControllerTest extends AbstractContainerBase {
     void whenCreateThenCheckIsCreated() {
         var createDTO = new ParkingCreateDTO();
         createDTO.setColor("AMARELO");
-        createDTO.setLicense("WRT-5555");
+        createDTO.setLicenseType("B");
         createDTO.setModel("BRASILIA");
         createDTO.setState("SP");
 
@@ -48,7 +48,7 @@ class ParkingControllerTest extends AbstractContainerBase {
                 .post("/parking")
                 .then()
                 .statusCode(HttpStatus.CREATED.value())
-                .body("license", Matchers.equalTo("WRT-5555"))
+                .body("licenseType", Matchers.equalTo("B"))
                 .body("color", Matchers.equalTo("AMARELO"));
     }
 }

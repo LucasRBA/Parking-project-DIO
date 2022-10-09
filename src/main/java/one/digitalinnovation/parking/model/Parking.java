@@ -10,7 +10,7 @@ public class Parking {
 
     @Id
     private String id;
-    private String license;
+    private String licenseType;
     private String state;
     private String model;
     private String color;
@@ -20,9 +20,9 @@ public class Parking {
     private  String parkingSpot;
     private String licensePlate;
 
-    public Parking(String id, String license, String state, String model, String color, String parkingSpot, String licensePlate) {
+    public Parking(String id, String licenseType, String state, String model, String color, String parkingSpot, String licensePlate) {
         this.id = id;
-        this.license = license;
+        this.licenseType = licenseType;
         this.state = state;
         this.model = model;
         this.color = color;
@@ -41,12 +41,12 @@ public class Parking {
         this.id = id;
     }
 
-    public String getLicense() {
-        return license;
+    public String getLicenseType() {
+        return licenseType;
     }
 
-    public void setLicense(String license) {
-        this.license = license;
+    public void setLicenseType(String licenseType) {
+        this.licenseType = licenseType;
     }
 
     public String getState() {

@@ -71,6 +71,7 @@ public class ParkingService {
         String parkingSpot = createParkingSpot(2,2);
         String licensePlate = generateLicensePlate(3,4);
         parkingCreate.setParkingSpot(parkingSpot);
+        parkingCreate.setLicensePlate(licensePlate);
 
         return parkingCreate;
     }
@@ -87,7 +88,7 @@ public class ParkingService {
         parking.setColor(parkingCreate.getColor());
         parking.setState(parkingCreate.getState());
         parking.setModel(parkingCreate.getModel());
-        parking.setLicense(parkingCreate.getLicense());
+        parking.setLicenseType(parkingCreate.getLicenseType());
         parking.setParkingSpot(createParkingSpot(2,2));
         parking.setLicensePlate(generateLicensePlate(3,4));
         parkingRepository.save(parking);

@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class ParkingDTO {
 
     private String id;
-    private String license;
+    private String licenseType;
     private String state;
     private String model;
     private String color;
@@ -31,12 +31,12 @@ public class ParkingDTO {
         this.id = id;
     }
 
-    public String getLicense() {
-        return license;
+    public String getLicenseType() {
+        return licenseType;
     }
 
-    public void setLicense(String license) {
-        this.license = license;
+    public void setLicenseType(String licenseType) {
+        this.licenseType = licenseType;
     }
 
     public String getState() {

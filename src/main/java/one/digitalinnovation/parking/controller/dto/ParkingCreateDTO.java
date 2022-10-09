@@ -2,17 +2,17 @@ package one.digitalinnovation.parking.controller.dto;
 
 public class ParkingCreateDTO {
 
-    private String license;
+    private String licenseType;
     private String state;
     private String model;
     private String color;
 
-    public String getLicense() {
-        return license;
+    public String getLicenseType() {
+        return licenseType;
     }
 
-    public void setLicense(String license) {
-        this.license = license;
+    public void setLicenseType(String licenseType) {
+        this.licenseType = licenseType;
     }
 
     public String getState() {
