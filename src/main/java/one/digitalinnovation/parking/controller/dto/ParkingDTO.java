@@ -21,6 +21,8 @@ public class ParkingDTO {
 
     private String parkingSpot;
 
+    private String licensePlate;
+
     public String getId() {
         return id;
     }
@@ -91,5 +93,13 @@ public class ParkingDTO {
 
     public void setParkingSpot(String parkingSpot) {
         this.parkingSpot = parkingSpot;
+    }
+
+    public String getLicensePlate() {
+        return licensePlate;
+    }
+
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
     }
 }

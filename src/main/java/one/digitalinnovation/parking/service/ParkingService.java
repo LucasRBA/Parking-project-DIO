@@ -51,6 +51,10 @@ public class ParkingService {
         return parkingSpot;
     }
 
+    public String  generateLicensePlate(int lenLetters, int lenNumbers) {
+        String licensePlate = createParkingSpot(lenLetters, lenNumbers);
+        return licensePlate;
+    }
 
     @Transactional(readOnly = true)
     public Parking findById(String id) {
@@ -64,7 +68,8 @@ public class ParkingService {
         parkingCreate.setId(uuid);
         parkingCreate.setEntryDate(LocalDateTime.now());
         parkingRepository.save(parkingCreate);
-        String parkingSpot = createParkingSpot(2,3);
+        String parkingSpot = createParkingSpot(2,2);
+        String licensePlate = generateLicensePlate(3,4);
         parkingCreate.setParkingSpot(parkingSpot);
 
         return parkingCreate;
@@ -83,7 +88,8 @@ public class ParkingService {
         parking.setState(parkingCreate.getState());
         parking.setModel(parkingCreate.getModel());
         parking.setLicense(parkingCreate.getLicense());
-        parking.setParkingSpot(createParkingSpot(2,3));
+        parking.setParkingSpot(createParkingSpot(2,2));
+        parking.setLicensePlate(generateLicensePlate(3,4));
         parkingRepository.save(parking);
         return parking;
     }
@@ -94,6 +100,7 @@ public class ParkingService {
         parking.setExitDate(LocalDateTime.now());
         parking.setBill(ParkingCheckOut.getBill(parking));
         parking.getParkingSpot();
+        parking.getLicensePlate();
         parkingRepository.save(parking);
         return parking;
     }
