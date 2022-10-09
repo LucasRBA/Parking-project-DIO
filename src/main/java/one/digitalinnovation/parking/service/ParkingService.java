@@ -90,7 +90,7 @@ public class ParkingService {
         parking.setModel(parkingCreate.getModel());
         parking.setLicenseType(parkingCreate.getLicenseType());
         parking.setParkingSpot(createParkingSpot(2,2));
-        parking.setLicensePlate(generateLicensePlate(3,4));
+        parking.setLicensePlate(parking.getLicensePlate()); // Same as above generate a new Licensa
         parkingRepository.save(parking);
         return parking;
     }
