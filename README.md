@@ -1,10 +1,7 @@
-# cloud-parking
-
-## Run database
-docker run --name parking-db -p 5432:5432 -e POSTGRES_DB=parking -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=123 -d postgres:10-alpine
-
-## Stop database
-docker stop parking-db
-
-## Start database
-docker start parking-db
+###This project was inspired by "Realizando Deploy na Nuvem de um Conjunto de API’s Desenvolvida em Spring Boot"
+####In addition to the base project that aims to serve a parking lot registration system, this implementation has more features, such as:
+   - A parking spot generator to remember the user where he/she parked;
+   - A license plate generator in order to remove some of the complexity for this test implementation;
+   - Some validations to prevent the user not to provide crucial data, like null name and car model.
+   
+####Feel free to fork and add your own features to the project.
