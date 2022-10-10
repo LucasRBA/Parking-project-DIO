@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
+import one.digitalinnovation.parking.exception.ModelNotFoundException;
 import one.digitalinnovation.parking.exception.OwnerNameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -70,6 +71,7 @@ public class ParkingService {
         String uuid = getUUID();
         parkingCreate.setId(uuid);
         String ownerName = parkingCreate.getOwnerName();
+        String model = parkingCreate.getModel();
         parkingCreate.setEntryDate(LocalDateTime.now());
         String parkingSpot = createParkingSpot(2,2);
         parkingCreate.setParkingSpot(parkingSpot);
@@ -77,8 +79,12 @@ public class ParkingService {
         parkingCreate.setLicensePlate(licensePlate);
         parkingRepository.save(parkingCreate);
 
-        if (ownerName == null || ownerName.equals("") || ownerName.equals(" ")) {
-            throw new OwnerNameNotFoundException(ownerName);
+        if ((ownerName == null || ownerName.equals("") || ownerName.equals(" ")) ) {
+            if (model == null || model.equals("") || model.equals(" ")) {
+                throw new ModelNotFoundException(model);
+            } else {
+                throw new OwnerNameNotFoundException(ownerName);
+            }
         } else {
             return parkingCreate;
         }

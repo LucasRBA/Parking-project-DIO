@@ -51,7 +51,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("DIO-Parking REST API")
                 .description("DIO REST API for Parking")
-                .version("1.19.0")
+                .version("1.23.0")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"")
                 .build();
