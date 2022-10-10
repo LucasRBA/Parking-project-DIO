@@ -10,6 +10,8 @@ public class Parking {
 
     @Id
     private String id;
+
+    private String ownerName;
     private String licenseType;
     private String state;
     private String model;
@@ -20,8 +22,9 @@ public class Parking {
     private  String parkingSpot;
     private String licensePlate;
 
-    public Parking(String id, String licenseType, String state, String model, String color, String parkingSpot, String licensePlate) {
+    public Parking(String id, String licenseType, String state, String model, String color, String parkingSpot, String licensePlate, String ownerName) {
         this.id = id;
+        this.ownerName = ownerName;
         this.licenseType = licenseType;
         this.state = state;
         this.model = model;
@@ -39,6 +42,13 @@ public class Parking {
 
     public void setId(String id) {
         this.id = id;
+    }
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 
     public String getLicenseType() {

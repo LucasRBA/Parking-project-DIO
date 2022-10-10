@@ -85,12 +85,13 @@ public class ParkingService {
     @Transactional
     public Parking update(String id, Parking parkingCreate) {
         Parking parking = findById(id);
-        parking.setColor(parkingCreate.getColor());
-        parking.setState(parkingCreate.getState());
-        parking.setModel(parkingCreate.getModel());
-        parking.setLicenseType(parkingCreate.getLicenseType());
+        parking.setOwnerName(parking.getOwnerName()); // Can't change
+        parking.setColor(parkingCreate.getColor()); // Can't change
+        parking.setState(parkingCreate.getState()); // Can't change
+        parking.setModel(parkingCreate.getModel()); // Can't change
+        parking.setLicenseType(parkingCreate.getLicenseType()); // Can't change
         parking.setParkingSpot(createParkingSpot(2,2));
-        parking.setLicensePlate(parking.getLicensePlate()); // Same as above generate a new Licensa
+        parking.setLicensePlate(parking.getLicensePlate()); // Same as above generate a new License
         parkingRepository.save(parking);
         return parking;
     }
