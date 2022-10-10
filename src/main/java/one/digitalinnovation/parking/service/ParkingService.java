@@ -77,7 +77,7 @@ public class ParkingService {
         parkingCreate.setLicensePlate(licensePlate);
         parkingRepository.save(parkingCreate);
 
-        if ( ownerName == null) {
+        if (ownerName == null || ownerName.equals("") || ownerName.equals(" ")) {
             throw new OwnerNameNotFoundException(ownerName);
         } else {
             return parkingCreate;
