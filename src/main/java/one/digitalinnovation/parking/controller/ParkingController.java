@@ -59,6 +59,7 @@ public class ParkingController {
     }
 
     @PostMapping
+    @ApiOperation("Register Vehicle Info")
     public ResponseEntity<ParkingDTO> create(@RequestBody ParkingCreateDTO dto) {
         var parkingCreate = parkingMapper.toParkingCreate(dto);
         var parking = parkingService.create(parkingCreate);
