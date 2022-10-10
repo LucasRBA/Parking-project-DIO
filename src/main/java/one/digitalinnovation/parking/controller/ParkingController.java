@@ -1,5 +1,6 @@
 package one.digitalinnovation.parking.controller;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -61,6 +62,7 @@ public class ParkingController {
         var parking = parkingService.create(parkingCreate);
         var result = parkingMapper.toParkingDTO(parking);
         return ResponseEntity.status(HttpStatus.CREATED).body(result);
+        // return ResponseEntity.created(new URI()); // created uri instead
     }
 
     @PutMapping("/{id}")
