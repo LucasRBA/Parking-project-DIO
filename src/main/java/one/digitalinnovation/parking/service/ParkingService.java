@@ -79,7 +79,7 @@ public class ParkingService {
         parkingCreate.setLicensePlate(licensePlate);
         parkingRepository.save(parkingCreate);
 
-        if ((ownerName == null || ownerName.equals("") || ownerName.equals(" ")) ) {
+        if (ownerName == null || ownerName.equals("") || ownerName.equals(" ")) {
             if (model == null || model.equals("") || model.equals(" ")) {
                 throw new ModelNotFoundException(model);
             } else {
