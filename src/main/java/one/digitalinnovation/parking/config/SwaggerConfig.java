@@ -49,9 +49,9 @@ public class SwaggerConfig {
 
     private ApiInfo metaData() {
         return new ApiInfoBuilder()
-                .title("Parking REST API")
-                .description("Spring Boot REST API for Parking")
-                .version("1.0.0")
+                .title("DIO-Parking REST API")
+                .description("DIO REST API for Parking")
+                .version("1.18.0")
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"")
                 .build();
