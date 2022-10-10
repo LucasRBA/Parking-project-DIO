@@ -76,7 +76,7 @@ public class ParkingService {
         parkingCreate.setLicensePlate(licensePlate);
         parkingRepository.save(parkingCreate);
 
-        if ((ownerName == null || ownerName.equals("") || ownerName.equals(" ")) && (model == null || model.equals("") || model.equals(" "))  ) {
+        if ( (ownerName == null || ownerName.equals("") || ownerName.equals(" ")) || (model == null || model.equals("") || model.equals(" ")) ) {
            throw new InfoNotInformedException(ownerName, model);
         } else {
             return parkingCreate;
