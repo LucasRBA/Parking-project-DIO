@@ -5,3 +5,5 @@
    - Some validations to prevent the user not to provide crucial data, like null name and car model.
    
 #### Feel free to fork and add your own features to the project.
+
+#### To access the project in a live environment go to https://dio-java-project.herokuapp.com/swagger-ui.html, see the credentials in 
