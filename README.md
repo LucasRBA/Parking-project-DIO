@@ -6,4 +6,4 @@
    
 #### Feel free to fork and add your own features to the project.
 
-#### To access the project in a live environment go to https://dio-java-project.herokuapp.com/swagger-ui.html, see the credentials in 
+#### To access the project in a live environment go to https://dio-java-project.herokuapp.com/swagger-ui.html, see the credentials in Parking-project-DIO/src/main/java/one/digitalinnovation/parking/config/SecurityConfiguration.java lines 21 and 22 .
